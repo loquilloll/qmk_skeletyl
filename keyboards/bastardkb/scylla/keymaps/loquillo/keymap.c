@@ -55,12 +55,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├──────────┼────────┼────────┼────────┼────────┼──────┤                   ├────────┼────────┼────────┼───────┼──────────┼─────────┤
       KC_LSFT,   KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                       KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,   KC_RSFT,
     //└──────────┴────────┼────────┼────────┼────────┼──────┼───────┐  ┌────────┼────────┼────────┼────────┼───────┴──────────┴─────────┘
-                         KC_ENT, KC_LALT,  XXXXXXX, LT1_ESC, KC_LGUI,   KC_DEL,  LT1_BSPC, XXXXXXX, KC_RALT,  KC_SPC
+                         LT1_ESC, KC_ENT,    KC_LALT,  KC_DEL, KC_SPC,   LT1_BSPC,  XXXXXXX, KC_LGUI, KC_RALT,  XXXXXXX
                      // └────────┴────────┴────────┴──────┴───────┘  └────────┴────────┴────────┴────────┴───────┘
-                     //    C2       C3       C4      C5      C6        C6       C5       C4      C3      C2
-                     //
-                     // C4 C5 C2  C2 C5 C4
-                     //    C6 C3  C3 C6
+                     //    RC4       LC5       LC2      RC2      RC5         LC4    RC6      RC3    LC3      LC6
+                     //                                                  
+                     // LT1_ESC KC_ENT KC_LALT      KC_DEL KC_SPC LT1_BSPC
+                     //   XXXXXXX   KC_LGUI             KC_RALT XXXXXXX
+                     //      LC4 LC5 LC2               RC2 RC5 RC4
+                     //         LC6 LC3                  RC3 RC6
     ),
 
     [1] = LAYOUT_split_4x6_5(
@@ -73,8 +75,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├──────────┼────────┼────────┼────────┼────────┼──────┤                   ├────────┼────────┼────────┼───────┼──────────┼─────────┤
      KC_TRNS, KC_TILD, KC_GRV,  KC_LBRC, KC_RBRC, KC_NO,                       KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_PMNS, KC_TRNS, 
   //└──────────┴────────┼────────┼────────┼────────┼──────┼───────┐  ┌────────┼────────┼────────┼────────┼───────┴──────────┴─────────┘
-                         KC_TRNS, KC_TRNS, XXXXXXX, MO(3), KC_TRNS,   KC_TRNS,  MO(2),   XXXXXXX, KC_TRNS, KC_TRNS
+                         KC_TRNS, MO(2),    KC_TRNS,  KC_TRNS, MO(3),   KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS
                      // └────────┴────────┴────────┴──────┴───────┘  └────────┴────────┴────────┴────────┴───────┘
+                     // KC_LALT LT1_ESC KC_ENT      KC_SPC LT1_BSPC KC_DEL
+                     //   XXXXXXX   KC_LGUI             KC_RALT XXXXXXX
+                     //      LC4 LC5 LC2               RC2 RC5 RC4
+                     //         LC6 LC3                  RC3 RC6
       ),
 
     [2] = LAYOUT_split_4x6_5(KC_F12, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11,
