@@ -8,6 +8,7 @@
         ["bastardkb/dilemma/3x5_3", "vendor"],
         ["bastardkb/dilemma/3x5_2", "vendor"],
         ["bastardkb/scylla", "vendor"],
+        ["bastardkb/scylla", "loquillo"],
         ["bastardkb/tbkmini", "vendor"],
         ["bastardkb/skeletyl", "vendor"]
     ]
