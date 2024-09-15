@@ -34,6 +34,8 @@
 
 #define LT1_ESC LT(1,KC_ESC)
 #define LT1_BSPC LT(1, KC_BSPC)
+#define LT1_ENT LT(1,KC_ENT)
+#define LT1_SPC LT(1, KC_SPC)
 
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
@@ -55,12 +57,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├──────────┼────────┼────────┼────────┼────────┼──────┤                   ├────────┼────────┼────────┼───────┼──────────┼─────────┤
       KC_LSFT,   KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                       KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,   KC_RSFT,
     //└──────────┴────────┼────────┼────────┼────────┼──────┼───────┐  ┌────────┼────────┼────────┼────────┼───────┴──────────┴─────────┘
-                         LT1_ESC, KC_ENT,    KC_LALT,  KC_DEL, KC_SPC,   LT1_BSPC,  XXXXXXX, KC_LGUI, KC_RALT,  XXXXXXX
+                         KC_ESC, LT1_ENT,    KC_CAPd,  KC_DEL, LT1_SPC,   KC_BSPC,  XXXXXXX, KC_LGUI, KC_RALT,  KC_LALT
                      // └────────┴────────┴────────┴──────┴───────┘  └────────┴────────┴────────┴────────┴───────┘
                      //    RC4       LC5       LC2      RC2      RC5         LC4    RC6      RC3    LC3      LC6
                      //                                                  
-                     // LT1_ESC KC_ENT KC_LALT      KC_DEL KC_SPC LT1_BSPC
-                     //   XXXXXXX   KC_LGUI             KC_RALT XXXXXXX
+                     // KC_ESC LT1_ENT KC_CAPS      KC_DEL LT1_SPC KC_BSPC
+                     //   KC_LALT   KC_LGUI             KC_RALT XXXXXXX
                      //      LC4 LC5 LC2               RC2 RC5 RC4
                      //         LC6 LC3                  RC3 RC6
     ),
